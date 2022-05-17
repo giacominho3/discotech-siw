@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="html://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="/css/formStyle.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<meta charset="UTF-8">
+<title>Nuovo brano</title>
+<style>
+	body {
+	background-image: url('/images/branibg.jpg');"
+	overflow: hidden;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	}
+	</style>
+</head>
+<body>
+<div class="topnav">
+  <a href="/home">Home</a>
+  <a href="/autori">Autori</a>
+  <a class = "active" href="/brani" >Brani</a>
+  <a href="/utenti" >Utenti</a>
+  <a href="/profilo">Profilo</a>
+  <a href="/logout">Logout</a>
+</div>
+<h1>Inserimento nuovo brano</h1>
+<form th:action="@{/nuovoBrano}" method="POST" th:object="${brano}">
+		<div>
+			<div>
+				<span><input type="text" th:field="*{nome}" placeholder="nome" autocomplete="off"/></span>
+			</div>		
+			<div>
+				<span><input type="text" th:field="*{autore}" placeholder="autore" autocomplete="off"/></span>
+			</div>
+			<div>
+				<span><input type="text" th:field="*{genere}" placeholder="genere" autocomplete="off"/></span>
+			</div>
+			<div>
+				<span><input type="text" th:field="*{data}" placeholder="data pubblicazione" autocomplete="off"/></span>
+			</div>
+			<div>
+				<span><button type="submit">Invio<i class="material-icons">done</i></button></span>
+			</div>
+		</div>
+	</form>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="html://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/css/homeStyle.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<title>Home</title>
+</head>
+<body>
+<div class="topnav">
+  <a class = "active" href="/home">Home</a>
+  <a href="/autori">Autori</a>
+  <a href="/brani" >Brani</a>
+  <a href="/utenti" >Utenti</a>
+  <a href="/profilo">Profilo</a>
+  <a href="/logout">Logout</a>
+</div>
+<h1>Discotech<i class="material-icons">audiotrack</i></h1>
+<h2 th:text = "'Benvenuto Utente!'"></h2>
+<div id = "flex-container">
+<a href = "/autori">Gli autori</a>
+<a href = "/brani">I brani</a>
+<a href = "/utenti">Gli utenti</a>
+</div>
+</body>
+</html>

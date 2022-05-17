@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title th:text = "${brano.nome}"></title>
+</head>
+<body>
+<div class="topnav">
+  <a href="/home">Home</a>
+  <a href="/autori">Autori</a>
+  <a class="active" href="/brani" >Brani</a>
+  <a href="/utenti" >Utenti</a>
+  <a href="/profilo">Profilo</a>
+  <a href="/logout">Logout</a>
+</div>
+<h1 th:text = "${brano.nome}"></h1>
+<h2 th:text = "'Autore: ' +${brano.autore}"></h2>
+<h2 th:text = "'Genere: ' +${brano.genere}"></h2>
+<h2 th:text = "'Data pubblicazione: ' +${brano.data}"></h2>
+</body>
+</html>

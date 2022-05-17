@@ -1,0 +1,36 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+html {
+	font-family: Poppins;
+    background-image: url("/images/");
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-color: black;
+    color: #C2088F;
+}
+
+::selection {
+  background: rgba(255, 255, 255, 1);
+}
+
+.columm1 {
+	float: left;
+	width: 60%;
+	padding: 15px;
+}
+
+h1 {
+	padding-top: 150px;
+	font-size: 40px;
+}
+
+h3 {
+	font-size: 40px;
+}
+.column2 {
+	float: right;
+	width: 40%;
+	padding: 15px; 
+}

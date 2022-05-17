@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title th:text = "${utente.username}"></title>
+</head>
+<body>
+<div class="topnav">
+  <a href="/home">Home</a>
+  <a href="/autori">Autori</a>
+  <a href="/brani" >Brani</a>
+  <a class="active" href="/utenti" >Utenti</a>
+  <a href="/profilo">Profilo</a>
+  <a href="/logout">Logout</a>
+</div>
+<h1 th:text = "${utente.username}"></h1>
+<h1 th:text = "${utente.nome} + ${utente.cognome}"></h1>
+<table>
+<caption>Raccolte</caption>
+	<tr>
+    	<th>Titolo</th>
+    	<th>Data creazione</th>
+  	</tr>
+  	<tr th:each = "raccolta : ${utente.raccolte}">
+  	<td><a th:href="@{'/raccolta' + '/' + ${raccolta.id}}" th:text ="${raccolta.titolo}"></a></td>
+	<td th:text = "${raccolta.data}"></td>
+	</tr>
+</table>
+</body>
+</html>

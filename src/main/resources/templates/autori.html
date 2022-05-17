@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang = "en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link rel="stylesheet" href="/css/mainStyle.css">
+	<meta charset="UTF-8">
+	<title>Elenco autori</title>
+	<style>
+	body {
+	background-image: url('/images/autoribg.jpg');
+	overflow: hidden;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	}
+	</style>
+</head>
+<body>
+<div class="topnav">
+  <a href="/home">Home</a>
+  <a class = "active" href="/autori">Autori</a>
+  <a href="/brani" >Brani</a>
+  <a href="/utenti" >Utenti</a>
+  <a href="/profilo">Profilo</a>
+  <a href="/logout">Logout</a>
+</div>
+<a href="/nuovoAutore">
+	<button>Nuovo autore +</button>
+</a>
+<h1>Autori</h1>
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Cognome</th>
+    <th>Nazionalità</th>
+  </tr>
+  <tr th:each = "autore : ${autori}">
+    <td><a th:href="@{'/autore' + '/' + ${autore.id}}" th:text ="${autore.nome}"></a></td>
+    <td><a th:href="@{'/autore' + '/' + ${autore.id}}" th:text ="${autore.cognome}"></a></td>
+    <td th:text ="${autore.nazionalita}"></td>
+  </tr>
+</table>
+</body>
+</html>

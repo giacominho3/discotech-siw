@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title th:text = "${raccolta.titolo}"></title>
+</head>
+<body>
+<div class="topnav">
+  <a href="/home">Home</a>
+  <a href="/autori">Autori</a>
+  <a href="/brani" >Brani</a>
+  <a href="/utenti" >Utenti</a>
+  <a href="/profilo">Profilo</a>
+  <a href="/logout">Logout</a>
+</div>
+<h1 th:text = "${raccolta.titolo}"></h1>
+<h1 th:text = "'Una raccolta di: ' + ${raccolta.possessore.username}"></h1>
+<table>
+<caption>Brani</caption>
+	<tr>
+    	<th>Titolo</th>
+    	<th>Autore</th>
+    	<th>Genere</th>
+    	<th>Data pubblicazione</th>
+  	</tr>
+  	<tr th:each = "brano : ${raccolta.brani}">
+  	<td><a th:href="@{'/brano' + '/' + ${brano.id}}" th:text ="${brano.nome}"></a></td>
+	<td th:text = "${brano.autore}"></td>
+	<td th:text = "${brano.genere}"></td>
+	<td th:text = "${brano.data}"></td>
+	</tr>
+</table>
+</body>
+</html>

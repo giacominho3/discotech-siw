@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang = "en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link rel="stylesheet" href="/css/mainStyle.css">
+	<meta charset="UTF-8">
+	<title>Elenco brani</title>
+	<style>
+	body {
+	background-image: url('/images/branibg.jpg');"
+	overflow: hidden;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	}
+	</style>
+</head>
+<body>
+<div class="topnav">
+  <a href="/home">Home</a>
+  <a href="/autori">Autori</a>
+  <a class="active" href="/brani" >Brani</a>
+  <a href="/utenti" >Utenti</a>
+  <a href="/profilo">Profilo</a>
+  <a href="/logout">Logout</a>
+</div>
+<a href="/nuovoBrano">
+	<button>Nuovo brano +</button> 
+</a>
+<h1>Brani</h1>
+<table>
+  <tr>
+    <th>Titolo</th>
+    <th>Autore</th>
+    <th>Genere</th>
+    <th>Data pubblicazione</th>
+  </tr>
+  <tr th:each = "brano : ${brani}">
+    <td><a href="brano.html" th:href="@{'brano' + '/' + ${brano.id}}" th:text ="${brano.nome}"></a></td>
+    <td th:text = "${brano.autore}"></td>
+    <td th:text = "${brano.genere}"></td>
+    <td th:text = "${brano.data}"></td>
+  </tr>
+</table>
+</body>
+</html>

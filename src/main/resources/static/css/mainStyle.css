@@ -1,0 +1,87 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+html {
+	font-family: Poppins;
+}
+
+::selection {
+  background: rgba(255, 255, 255, 1);
+}
+
+.topnav {
+	background-color: black;
+	overflow: hidden;
+}
+
+.topnav a {
+	float: left;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+	transition-duration: 0.5s;
+}
+
+.topnav a:hover {
+	background-color: #fa85db;
+	color: black;
+}
+
+.topnav a.active {
+	background-color: #C2088F;
+	color: black;
+	font-weight: bold;
+}
+
+h1 {
+	color: #C2088F;
+	text-align: center;
+}
+
+button {
+	background-color: black;
+	color: #C2088F;
+	font-family: Poppins;
+	font-size: 20px;
+	border: none;
+	transition-duration: 0.5s;
+	margin-left: 1000px;
+}
+
+button:hover {
+	background-color: #C2088F;
+	color: black;
+}
+
+table {
+	table-layout: fixed;
+	width: 100%;
+	border-collapse: collapse;
+	color: #C2088F;
+}
+
+th, td {
+	padding: 20px;
+	border-bottom: 1px solid rgba(194, 8, 143, 0.35);
+	transition-duration: 0.5s;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.9);
+	font-weight: bold;
+}
+
+td:hover {
+	background-color: rgba(194, 8, 143, 0.8);
+	color: white;
+}
+
+a {
+	text-decoration: none;
+	color: rgba(194, 8, 143, 1);
+}
+
+td:hover a {
+	text-decoration: none;
+	color: white;
+}

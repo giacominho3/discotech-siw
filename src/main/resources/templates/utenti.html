@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang = "en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link rel="stylesheet" href="/css/mainStyle.css">
+	<meta charset="UTF-8">
+	<title>Elenco utenti</title>
+	<style>
+	body {
+	background-image: url('/images/utentibg.jpg');"
+	overflow: hidden;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	}
+	</style>
+</head>
+<body>
+<div class="topnav">
+  <a href="/home">Home</a>
+  <a href="/autori">Autori</a>
+  <a href="/brani" >Brani</a>
+  <a class="active" href="/utenti" >Utenti</a>
+  <a href="/profilo">Profilo</a>
+  <a href="/logout">Logout</a>
+</div>
+<h1>Utenti</h1>
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Cognome</th>
+  </tr>
+  <tr th:each = "utente : ${utenti}">
+    <td><a th:href="@{'/utente' + '/' + ${utente.id}}" th:text ="${utente.nome}"></a></td>
+	<td><a th:href="@{'/utente' + '/' + ${utente.id}}" th:text ="${utente.cognome}"></a></td>
+  </tr>
+</table>
+</body>
+</html>
