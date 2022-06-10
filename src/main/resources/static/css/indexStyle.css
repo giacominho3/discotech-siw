@@ -3,11 +3,10 @@
 
 html {
 	font-family: Poppins;
-    background-image: url("/images/");
-    overflow: hidden;
-    background-repeat: no-repeat;
-    background-size: 50%;
-    background-color: black;
+	background-image: url('/images/branibg.jpg');"
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
     color: #C2088F;
 }
 
@@ -15,22 +14,24 @@ html {
   background: rgba(255, 255, 255, 1);
 }
 
-.columm1 {
-	float: left;
-	width: 60%;
-	padding: 15px;
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+  text-align: center;
+  padding-top: 150px;
 }
 
 h1 {
-	padding-top: 150px;
-	font-size: 40px;
+	font-size: 80px;
 }
 
 h3 {
 	font-size: 40px;
 }
-.column2 {
-	float: right;
-	width: 40%;
-	padding: 15px; 
+
+h4 {
+	font-size: 20px;
 }

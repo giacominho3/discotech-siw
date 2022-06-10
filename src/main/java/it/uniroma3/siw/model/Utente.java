@@ -25,6 +25,8 @@ public class Utente {
 	private String cognome;
 	@Column(nullable = false)
 	private LocalDate dataNascita;
+	@Column(nullable = false)
+	private String username;
 	
 	@OneToMany(mappedBy = "possessore")
 	private List<Raccolta> raccolte;
@@ -33,7 +35,7 @@ public class Utente {
 		this.raccolte = new ArrayList<>();
 	}
 	
-	public Utente(String n, String c, LocalDate d) {
+	public Utente(String n, String c, String u, LocalDate d) {
 		this();
 		this.nome = n;
 		this.cognome = c;
@@ -62,6 +64,14 @@ public class Utente {
 
 	public void setCognome(String cognome) {
 		this.cognome = cognome;
+	}
+	
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public LocalDate getDataNascita() {

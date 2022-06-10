@@ -55,11 +55,19 @@ button:hover {
 	color: black;
 }
 
+.sorter {
+	color: white;
+}
+
 table {
 	table-layout: fixed;
 	width: 100%;
 	border-collapse: collapse;
 	color: #C2088F;
+}
+
+th {
+	font-size: 22px;
 }
 
 th, td {
@@ -79,6 +87,11 @@ td:hover {
 a {
 	text-decoration: none;
 	color: rgba(194, 8, 143, 1);
+}
+
+i {
+	font-size: 30px;
+	color : rgba(194, 8, 143, 1);
 }
 
 td:hover a {

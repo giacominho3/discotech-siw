@@ -1,10 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="html://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<link rel="stylesheet" href="/css/loginStyle.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<meta charset="UTF-8">
+<title>Login</title>
+<style>
+	body {
+	background-color: black;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	}
+</style>
 </head>
 <body>
-
+<h1>Login</h1>
+		<div>
+			<div>
+				<span><input type="text" placeholder="username" autocomplete="off"/></span>
+			</div>		
+			<div>
+				<span><input type="text" placeholder="password" autocomplete="off"/></span>
+			</div>
+			<div style = "text-align: center">
+				<span><button type="submit">Invio<br><i class="material-icons">done</i></button></span>
+			</div>
+		</div>
 </body>
 </html>

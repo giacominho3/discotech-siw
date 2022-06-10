@@ -7,12 +7,12 @@
 	<style>
 	body {
 	background-image: url('/images/autoribg.jpg');
-	overflow: hidden;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
 	}
 	</style>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 <div class="topnav">
@@ -30,8 +30,10 @@
 <table>
   <tr>
     <th>Nome</th>
-    <th>Cognome</th>
-    <th>Nazionalità</th>
+    <th>Cognome<div><a class="sorter" href="/autori/ascC"><i class="material-icons">arrow_upward</i></a><a
+     class="sorter" href="/autori/descC"><i class="material-icons">arrow_downward</i></a></div></th>
+    <th>Nazionalità<div><a class="sorter" href="/autori/ascN"><i class="material-icons">arrow_upward</i></a><a
+     class="sorter" href="/autori/descN"><i class="material-icons">arrow_downward</i></a></div></th>
   </tr>
   <tr th:each = "autore : ${autori}">
     <td><a th:href="@{'/autore' + '/' + ${autore.id}}" th:text ="${autore.nome}"></a></td>

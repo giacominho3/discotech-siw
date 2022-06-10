@@ -1,104 +1,104 @@
 package it.uniroma3.siw.model;
 
+import java.util.Collection;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
-
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+import javax.persistence.JoinColumn;
 
 @Entity
+@Table(name= "credenziali", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
 public class Credenziali {
 	
-	public static final String DEFAULT_ROLE = "DEFAULT";
-	
-	public static final String ADMIN_ROLE = "ADMIN";
-	
 	@Id
-	@GeneratedValue (strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column (unique = true, nullable = false, length = 100)
-	private String username;
-	@Column (nullable = false, length = 100)
+	@Column(name = "first_name", nullable = false, length = 20)
+	private String firstName;
+	
+	@Column(name = "last_name", nullable = false, length = 20)
+	private String lastName;
+	
+	private String email;
 	private String password;
-	@Column (nullable = false, length = 10)
-	private String ruolo;
 	
-	@OneToOne (cascade = CascadeType.ALL)
-	private Utente utente;
+	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinTable(
+			name = "credenziali_ruolo",
+			joinColumns = @JoinColumn(
+		            name = "credenziali_id", referencedColumnName = "id"),
+			inverseJoinColumns = @JoinColumn(
+				            name = "ruolo_id", referencedColumnName = "id"))
+	private Collection<Ruolo> ruolo;
 	
-	public Credenziali () {
-		this.utente = new Utente();
+	public Credenziali(String firstName, String lastName, String email, String password, Collection<Ruolo> ruolo) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.password = password;
+		this.ruolo = ruolo;
 	}
 	
-	public Credenziali (String u) {
-		this();
-		this.username = u;
+	public Credenziali() {
+		
 	}
 	
-	public Utente getUser() {
-		return utente;
+	public Long getId() {
+		return id;
 	}
-
-
-	public void setUser(Utente u) {
-		this.utente = u;
+	
+	public void setId(Long id) {
+		this.id = id;
 	}
-
-
+	
+	public String getFirstName() {
+		return firstName;
+	}
+	
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	
+	public String getLastName() {
+		return lastName;
+	}
+	
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	
+	public String getEmail() {
+		return email;
+	}
+	
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
 	public String getPassword() {
 		return password;
 	}
-
-
+	
 	public void setPassword(String password) {
 		this.password = password;
 	}
 	
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-
-	public String getRuolo() {
+	public Collection<Ruolo> getRuolo() {
 		return ruolo;
 	}
-
-
-	public void setRuolo(String ruolo) {
+	
+	public void setRuolo(Collection<Ruolo> ruolo) {
 		this.ruolo = ruolo;
 	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Credenziali other = (Credenziali) obj;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		return true;
-	}
-
 }

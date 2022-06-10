@@ -1,31 +1,39 @@
 package it.uniroma3.siw.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+
+
+import it.uniroma3.siw.dto.CredenzialiRegistrationDto;
+import it.uniroma3.siw.service.CredenzialiService;
 
 @Controller
+@RequestMapping("/registrazione")
 public class AuthenticationController {
 	
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String getLogin (Model model) {
-		return "login.html";
-	}
-	
-	@RequestMapping(value = "/registrazione", method = RequestMethod.GET)
-	public String getRegistrazione (Model model) {
-		return "registrazione.html";
-	}
-	
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String login (Model model) {
-		return "home.html";
-	}
-	
-	@RequestMapping(value = "/registrazione", method = RequestMethod.POST)
-	public String registrazione (Model model) {
-		return "home.html";
-	}
+	private CredenzialiService credenzialiService;
 
+	public AuthenticationController(CredenzialiService credenzialiService) {
+		super();
+		this.credenzialiService = credenzialiService;
+	}
+	
+	@ModelAttribute("credenziali")
+	public CredenzialiRegistrationDto credenzialiRegistrationDto(){
+		return new CredenzialiRegistrationDto();
+	}
+	
+	@GetMapping
+	public String mostraFormRegistrazione() {
+		return "registrazione";
+	}
+	
+	@PostMapping
+	public String registerUserAccount(@ModelAttribute("credenziali") CredenzialiRegistrationDto registrationDto) {
+		credenzialiService.save(registrationDto);
+		return "redirect:/registrazione?success";
+	}
 }

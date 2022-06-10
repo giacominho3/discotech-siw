@@ -69,7 +69,7 @@ public class BranoService {
 	  }
 	  
 	  @Transactional 
-	  public List<Brano> listaBraniPerNomeDisc () {
+	  public List<Brano> listaBraniPerNomeDesc () {
 		  return (List<Brano>)this.branoRepo.findAllByOrderByNomeDesc();
 	  }
 	  
@@ -79,7 +79,7 @@ public class BranoService {
 	  }
 	  
 	  @Transactional 
-	  public List<Brano> listaBraniPerDataDisc () {
+	  public List<Brano> listaBraniPerDataDesc () {
 		  return (List<Brano>)this.branoRepo.findAllByOrderByDataDesc();
 	  }
 }

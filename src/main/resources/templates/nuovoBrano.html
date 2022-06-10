@@ -8,13 +8,12 @@
 <title>Nuovo brano</title>
 <style>
 	body {
-	background-image: url('/images/branibg.jpg');"
-	overflow: hidden;
+	background-image: url('/images/branibg.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
 	}
-	</style>
+</style>
 </head>
 <body>
 <div class="topnav">
@@ -29,10 +28,10 @@
 <form th:action="@{/nuovoBrano}" method="POST" th:object="${brano}">
 		<div>
 			<div>
-				<span><input type="text" th:field="*{nome}" placeholder="nome" autocomplete="off"/></span>
+				<span><input type="text" th:field="*{nome}" placeholder="titolo" autocomplete="off"/></span>
 			</div>		
 			<div>
-				<span><input type="text" th:field="*{autore}" placeholder="autore" autocomplete="off"/></span>
+				<span><input type="text" th:object="${authorName}" placeholder="cognome autore" autocomplete="off"/></span>
 			</div>
 			<div>
 				<span><input type="text" th:field="*{genere}" placeholder="genere" autocomplete="off"/></span>

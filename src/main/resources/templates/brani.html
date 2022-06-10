@@ -7,12 +7,12 @@
 	<style>
 	body {
 	background-image: url('/images/branibg.jpg');"
-	overflow: hidden;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
 	}
 	</style>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 <div class="topnav">
@@ -29,10 +29,12 @@
 <h1>Brani</h1>
 <table>
   <tr>
-    <th>Titolo</th>
+    <th>Titolo<div><a class="sorter" href="/brani/ascT"><i class="material-icons">arrow_upward</i></a><a
+     class="sorter" href="/brani/descT"><i class="material-icons">arrow_downward</i></a></div></th>
     <th>Autore</th>
     <th>Genere</th>
-    <th>Data pubblicazione</th>
+    <th>Data pubblicazione<div><a class="sorter" href="/brani/ascD"><i class="material-icons">arrow_upward</i></a><a
+     class="sorter" href="/brani/descD"><i class="material-icons">arrow_downward</i></a></div></th>
   </tr>
   <tr th:each = "brano : ${brani}">
     <td><a href="brano.html" th:href="@{'brano' + '/' + ${brano.id}}" th:text ="${brano.nome}"></a></td>

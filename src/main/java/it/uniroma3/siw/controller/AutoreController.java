@@ -23,6 +23,30 @@ public class AutoreController {
 		return "autori.html";
 	}
 	
+	@RequestMapping(value = "/autori/ascC", method = RequestMethod.GET)
+	public String mostraListaAutoriAscC (Model model) {
+		model.addAttribute("autori", this.as.listaPerCognomeAsc());
+		return "autori.html";
+	}
+	
+	@RequestMapping(value = "/autori/descC", method = RequestMethod.GET)
+	public String mostraListaAutoriDescC (Model model) {
+		model.addAttribute("autori", this.as.listaPerCognomeDesc());
+		return "autori.html";
+	}
+	
+	@RequestMapping(value = "/autori/ascN", method = RequestMethod.GET)
+	public String mostraListaAutoriAsN (Model model) {
+		model.addAttribute("autori", this.as.listaPerNazionalitaAsc());
+		return "autori.html";
+	}
+	
+	@RequestMapping(value = "/autori/descN", method = RequestMethod.GET)
+	public String mostraListaAutoriDescN (Model model) {
+		model.addAttribute("autori", this.as.listaPerNazionalitaDesc());
+		return "autori.html";
+	}
+	
 	@RequestMapping(value = "/autori/{id}", method = RequestMethod.GET)
 	public String getAutore (@PathVariable("id") Long id, Model model) {
 		model.addAttribute("autore", this.as.cercaId(id));

@@ -37,7 +37,7 @@ public class AutoreService {
 	}
 	
 	@Transactional
-	public List<Autore> cercaCognome (String cognome) {
+	public Autore cercaCognome (String cognome) {
 		return this.autoreRepo.findByCognome(cognome);
 	}
 	
@@ -78,18 +78,17 @@ public class AutoreService {
 	}
 	  
 	@Transactional 
-	public List<Autore> listaPerCognomeDisc () { 
+	public List<Autore> listaPerCognomeDesc () { 
 		return (List<Autore>)this.autoreRepo.findAllByOrderByCognomeDesc();
 	}
-	 
 	
-	
-	 @Transactional
-	 public List<Autore> listaPerDataNascitaAsc () {
-		 return (List<Autore>)this.autoreRepo.findAllByOrderByDataNascitaAsc();
+	@Transactional
+	public List<Autore> listaPerNazionalitaAsc () {
+		return (List<Autore>)this.autoreRepo.findAllByOrderByNazionalitaAsc();
 	}
-	 
-	 @Transactional
-	 public List<Autore> listaPerDataNascitaDisc () {
-		 return (List<Autore>)this.autoreRepo.findAllByOrderByDataNascitaDesc(); }
+	
+	@Transactional
+	public List<Autore> listaPerNazionalitaDesc () {
+		return (List<Autore>)this.autoreRepo.findAllByOrderByNazionalitaDesc();
+	}
 }
