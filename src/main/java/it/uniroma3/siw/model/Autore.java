@@ -30,7 +30,9 @@ public class Autore {
 	@Column(nullable = false)
 	private String luogoNascita;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@Column
 	private LocalDate dataMorte;
+	@Column
 	private String luogoMorte;
 	@Column(nullable = false)
 	private String nazionalita;

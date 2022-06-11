@@ -36,8 +36,8 @@
      class="sorter" href="/autori/descN"><i class="material-icons">arrow_downward</i></a></div></th>
   </tr>
   <tr th:each = "autore : ${autori}">
-    <td><a th:href="@{'/autore' + '/' + ${autore.id}}" th:text ="${autore.nome}"></a></td>
-    <td><a th:href="@{'/autore' + '/' + ${autore.id}}" th:text ="${autore.cognome}"></a></td>
+    <td><a th:text ="${autore.nome}"></a></td>
+    <td><a href="autore.html" th:href="@{'/autori' + '/' + ${autore.id}}" th:text ="${autore.cognome}"></a></td>
     <td th:text ="${autore.nazionalita}"></td>
   </tr>
 </table>

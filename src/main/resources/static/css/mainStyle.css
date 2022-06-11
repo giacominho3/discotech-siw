@@ -40,6 +40,10 @@ h1 {
 	text-align: center;
 }
 
+h2 {
+	color: #C2088F;
+}
+
 button {
 	background-color: black;
 	color: #C2088F;
@@ -97,4 +101,8 @@ i {
 td:hover a {
 	text-decoration: none;
 	color: white;
+}
+
+caption {
+	font-size: 30px;
 }
