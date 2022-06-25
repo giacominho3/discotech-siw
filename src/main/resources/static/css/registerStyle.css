@@ -12,7 +12,7 @@ body{
     align-items: center;
     justify-content: center;
     font-size: 18px;
-    background: url('/images/equalizer.png');
+    background: url('/images/SoundWaves.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 	background-attachment: fixed;
@@ -20,7 +20,6 @@ body{
 .nav{
 	background-color: white;
 }
-
 
 .navbar_dark {
 	background: #00000080;
@@ -72,7 +71,6 @@ body{
 	color: black;
 	font-weight: bold;
 }
-
 .divider {
     height: 200px;
     width: 2px;
@@ -82,20 +80,9 @@ body{
 
 .socialbutton {
     padding: 20px 35px;
-    border-radius: 40px;
+    border-radius: 5px;
     background-color: rgb(230, 225, 225);
-    margin-top: 40px;
-    font-size: 14px;
-    border: none;
-    text-align: center;
-    width: 100%;
-}
-
-.socialbutton1 {
-    padding: 20px 35px;
-    border-radius: 40px;
-    background-color: rgb(230, 225, 225);
-    margin-top: 15px;
+    margin-bottom: 20px;
     font-size: 14px;
     border: none;
     text-align: center;
@@ -107,10 +94,6 @@ body{
 }
 
 .socialbutton:hover {
-    box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 2px 4px rgba(0, 0, 0, .25);
-}
-
-.socialbutton1:hover {
     box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 2px 4px rgba(0, 0, 0, .25);
 }
 
@@ -130,8 +113,8 @@ body{
 .container {
 	
     padding-top: 0px;
-    width: 400px;
-    max-width: 400px;
+    width: 470px;
+    max-width: 500px;
     margin: 1rem;
     padding: 2rem;
     box-shadow: 0 0 70px rgb(194, 8, 143);
@@ -143,7 +126,7 @@ body{
 .form__input,
 .form__button {
     font: 500 1rem 'Quicksand', sans-serif;
-   
+    
 }
 
 .form__title {
@@ -178,8 +161,13 @@ body{
   	background: rgba(255, 255, 255, 1);
 }
 
-a{color:white; text-decoration: none;}
+a{ 
+	color:white; 
+	text-decoration: none;
+	
+}
 a:hover{color: #C2088F; text-decoration: none;}
+
 .a1{ 
 	color:white; 
 	text-decoration: none;

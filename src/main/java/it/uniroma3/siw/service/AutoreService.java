@@ -1,5 +1,6 @@
 package it.uniroma3.siw.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -90,5 +91,15 @@ public class AutoreService {
 	@Transactional
 	public List<Autore> listaPerNazionalitaDesc () {
 		return (List<Autore>)this.autoreRepo.findAllByOrderByNazionalitaDesc();
+	}
+	
+	public List<Autore> findAllAutore() {
+		List<Autore> tuttiAutori = new ArrayList<Autore>();
+
+		for (Autore c : autoreRepo.findAll()) {
+			tuttiAutori.add(c);
+		}
+
+		return tuttiAutori;
 	}
 }

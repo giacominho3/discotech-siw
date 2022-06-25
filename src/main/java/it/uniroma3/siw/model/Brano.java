@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 public class Brano {
 	
@@ -18,7 +20,9 @@ public class Brano {
 	
 	@Column(nullable = false)
 	private String nome;
+	@Column(nullable = false)
 	private String genere;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Column(nullable = false)
 	private LocalDate data;
 	

@@ -7,9 +7,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import it.uniroma3.siw.model.Autore;
 import it.uniroma3.siw.model.Brano;
 import it.uniroma3.siw.service.AutoreService;
 import it.uniroma3.siw.service.BranoService;
@@ -62,14 +60,12 @@ public class BranoController {
 	@RequestMapping(value = "/nuovoBrano", method = RequestMethod.GET)
 	public String formBrano (Model model) {
 		model.addAttribute("brano", new Brano());
-		model.addAttribute("authorName", new String());
+		model.addAttribute("autori", this.as.listaAutori());
 		return "nuovoBrano.html";
 	}
 	
 	@RequestMapping(value = "/nuovoBrano", method = RequestMethod.POST)
-	public String addBrano (@ModelAttribute("brano") Brano b, @RequestParam("authorName") String s, Model model) {
-		Autore a = this.as.cercaCognome(s);
-		b.setAutore(a);
+	public String addBrano (@ModelAttribute("brano") Brano b, Model model) {
 		this.bs.salva(b);
 		model.addAttribute("brani", this.bs.listaBrani());
 		return "brani.html";

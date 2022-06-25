@@ -31,7 +31,12 @@
 				<span><input type="text" th:field="*{nome}" placeholder="titolo" autocomplete="off"/></span>
 			</div>		
 			<div>
-				<span><input type="text" th:object="${authorName}" placeholder="cognome autore" autocomplete="off"/></span>
+				<span><select th:field="*{autore}">
+				<th:block th:each="aut: ${autori}">
+       			<option th:value="${aut.id}" th:text="${aut.cognome}"></option>
+       			</th:block>
+    			</select></span>
+			</div>
 			</div>
 			<div>
 				<span><input type="text" th:field="*{genere}" placeholder="genere" autocomplete="off"/></span>

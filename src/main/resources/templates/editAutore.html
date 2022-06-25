@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Autore</title>
+<link rel="stylesheet" href="/css/formStyle.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<meta charset="UTF-8">
+	<style>
+	body {
+	background-image: url('/images/autoribg.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	}
+	</style>
+</head>
+<body>
+<div class="topnav">
+  <a href="/home">Home</a>
+  <a class="active" href="/autori">Autori</a>
+  <a href="/brani" >Brani</a>
+  <a href="/utenti" >Utenti</a>
+  <a href="/profilo">Profilo</a>
+  <a href="/logout">Logout</a>
+</div>
+
+<h1>Modifica autore</h1>
+<form th:action="@{'/autori' + '/' + ${autore.id} + '/editAutore'}" method="POST">
+		<div>
+			<div>
+				<span><input type="text" th:field="*{autoreNuovo.nome}" th:placeholder="${autore.nome}" autocomplete="off"/></span>
+			</div>		
+			<div>
+				<span><input type="text" th:field="*{autoreNuovo.cognome}" th:placeholder="${autore.cognome}" autocomplete="off"/></span>
+			</div>
+			<div>
+				<span><input type="text" th:field="*{autoreNuovo.dataNascita}" th:placeholder="${autore.dataNascita}" autocomplete="off"/></span>
+			</div>
+			<div>
+				<span><input type="text" th:field="*{autoreNuovo.luogoNascita}" th:placeholder="${autore.luogoNascita}" autocomplete="off"/></span>
+			</div>
+			<div>
+				<span><input type="text" th:field="*{autoreNuovo.nazionalita}" th:placeholder="${autore.nazionalita}" autocomplete="off"/></span>
+			</div>
+			<div>
+				<span><button type="submit">Invio<i class="material-icons">done</i></button></span>
+			</div>
+		</div>
+	</form>
+
+</body>
+</html>

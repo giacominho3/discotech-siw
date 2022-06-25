@@ -3,6 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <title th:text = "${brano.nome}"></title>
+<link rel="stylesheet" href="/css/mainStyle.css">
+<style>
+	body {
+	background-image: url('/images/branibg.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	}
+	</style>
 </head>
 <body>
 <div class="topnav">
@@ -14,7 +23,7 @@
   <a href="/logout">Logout</a>
 </div>
 <h1 th:text = "${brano.nome}"></h1>
-<h2 th:text = "'Autore: ' +${brano.autore}"></h2>
+<h2 th:text = "'Autore: ' + ${brano.autore.nome} + ' ' + ${brano.autore.cognome}"></h2>
 <h2 th:text = "'Genere: ' +${brano.genere}"></h2>
 <h2 th:text = "'Data pubblicazione: ' +${brano.data}"></h2>
 </body>

@@ -37,8 +37,8 @@
      class="sorter" href="/brani/descD"><i class="material-icons">arrow_downward</i></a></div></th>
   </tr>
   <tr th:each = "brano : ${brani}">
-    <td><a href="brano.html" th:href="@{'brano' + '/' + ${brano.id}}" th:text ="${brano.nome}"></a></td>
-    <td th:text = "${brano.autore}"></td>
+    <td><a href="brano.html" th:href="@{'/brani' + '/' + ${brano.id}}" th:text ="${brano.nome}"></a></td>
+    <td th:text = "${brano.autore.cognome}"></td>
     <td th:text = "${brano.genere}"></td>
     <td th:text = "${brano.data}"></td>
   </tr>

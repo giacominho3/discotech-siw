@@ -16,70 +16,69 @@ public class BranoService {
 	
 	@Autowired
 	BranoRepository branoRepo;
-	
+
 	@Transactional
-	public Brano salva (Brano b) {
+	public Brano salva(Brano b) {
 		return this.branoRepo.save(b);
 	}
-	
+
 	@Transactional
-	public void cancella (Brano b) {
+	public void cancella(Brano b) {
 		this.branoRepo.delete(b);
 	}
-	
+
 	@Transactional
-	public void cancellaTutti () {
+	public void cancellaTutti() {
 		this.branoRepo.deleteAll();
 	}
-	
+
 	@Transactional
-	public Long conta () {
+	public Long conta() {
 		return this.branoRepo.count();
 	}
-	
+
 	@Transactional
-	public List<Brano> listaBrani () {
+	public List<Brano> listaBrani() {
 		return (List<Brano>) this.branoRepo.findAll();
 	}
-	
+
 	@Transactional
-	public List<Brano> cercaNome (String nome) {
+	public List<Brano> cercaNome(String nome) {
 		return this.branoRepo.findByNome(nome);
 	}
-	
+
 	@Transactional
-	public Brano cercaId (Long id) {
+	public Brano cercaId(Long id) {
 		return this.branoRepo.findById(id).get();
 	}
-	
+
 	@Transactional
-	public List<Brano> cercaAutore (Autore a) {
+	public List<Brano> cercaAutore(Autore a) {
 		return this.branoRepo.findByAutore(a);
 	}
-	
+
 	@Transactional
-	public List<Brano> cercaGenere (String g) {
+	public List<Brano> cercaGenere(String g) {
 		return this.branoRepo.findByGenere(g);
 	}
-	
-	
-	  @Transactional
-	  public List<Brano> listaBraniPerNomeAsc () {
-		  return (List<Brano>)this.branoRepo.findAllByOrderByNomeAsc();
-	  }
-	  
-	  @Transactional 
-	  public List<Brano> listaBraniPerNomeDesc () {
-		  return (List<Brano>)this.branoRepo.findAllByOrderByNomeDesc();
-	  }
-	  
-	  @Transactional 
-	  public List<Brano> listaBraniPerDataAsc () {
-		  return (List<Brano>)this.branoRepo.findAllByOrderByDataAsc();
-	  }
-	  
-	  @Transactional 
-	  public List<Brano> listaBraniPerDataDesc () {
-		  return (List<Brano>)this.branoRepo.findAllByOrderByDataDesc();
-	  }
+
+	@Transactional
+	public List<Brano> listaBraniPerNomeAsc() {
+		return (List<Brano>) this.branoRepo.findAllByOrderByNomeAsc();
+	}
+
+	@Transactional
+	public List<Brano> listaBraniPerNomeDesc() {
+		return (List<Brano>) this.branoRepo.findAllByOrderByNomeDesc();
+	}
+
+	@Transactional
+	public List<Brano> listaBraniPerDataAsc() {
+		return (List<Brano>) this.branoRepo.findAllByOrderByDataAsc();
+	}
+
+	@Transactional
+	public List<Brano> listaBraniPerDataDesc() {
+		return (List<Brano>) this.branoRepo.findAllByOrderByDataDesc();
+	}
 }

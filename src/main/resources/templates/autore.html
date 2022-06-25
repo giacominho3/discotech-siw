@@ -22,12 +22,15 @@
   <a href="/profilo">Profilo</a>
   <a href="/logout">Logout</a>
 </div>
+<a href="editAutore.html" th:href="@{'/autori' + '/' + ${autore.id} + '/editAutore'}">
+	<button>Modifica autore</button>
+</a>
 <h1 th:text = "${autore.nome} + ' ' + ${autore.cognome}">Nome Cognome</h1>
 <h2 th:text = "'Data di nascita: ' + ${autore.dataNascita}">Data Nascita</h2>
-<h2 th:text = "'Luogo di nascita: ' + ${autore.luogoNascita}">Luogo Nascita</h2>
-<h2 th:text = "'Nazionalità: ' + ${autore.nazionalita}">Nazionalità</h2>
 <h2 th:if = "${autore.dataMorte != null}" th:text = "'Data di morte: ' + ${autore.dataMorte}"></h2>
+<h2 th:text = "'Luogo di nascita: ' + ${autore.luogoNascita}">Luogo Nascita</h2>
 <h2 th:if = "${autore.luogoMorte != null}" th:text = "'Luogo di morte: ' + ${autore.luogoMorte}"></h2>
+<h2 th:text = "'Nazionalità: ' + ${autore.nazionalita}">Nazionalità</h2>
 <div>
 <table>
 <caption>Brani:</caption>
@@ -36,7 +39,7 @@
     	<th>Data pubblicazione</th>
   	</tr>
   	<tr th:each = "brano : ${autore.brani}">
-  	<td><a th:href="@{'/brano' + '/' + ${brano.id}}" th:text ="${brano.nome}"></a></td>
+  	<td><a th:href="@{'/brani' + '/' + ${brano.id}}" th:text ="${brano.nome}"></a></td>
 	<td th:text = "${brano.data}"></td>
 	</tr>
 </table>

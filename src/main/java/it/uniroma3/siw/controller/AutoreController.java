@@ -65,4 +65,29 @@ public class AutoreController {
 		model.addAttribute("autori", this.as.listaAutori());
 		return "autori.html";
 	}
+	
+	@RequestMapping(value = "/autori/{id}/editAutore", method = RequestMethod.GET)
+	public String editAutore (@PathVariable("id") Long id, Model model) {
+		model.addAttribute("autoreNuovo", new Autore());
+		model.addAttribute("autore", this.as.cercaId(id));
+		return "editAutore.html";
+	}
+	
+	@RequestMapping(value = "/autori/{id}/editAutore", method = RequestMethod.POST)
+	public String editAutoreConfirm (@PathVariable("id") Long id, @ModelAttribute("autoreNuovo") Autore a, @ModelAttribute("autore") Autore aut, Model model) {
+		if (a.getNome() != null)
+			aut.setNome(a.getNome());
+		if (a.getCognome() != null)
+			aut.setCognome(a.getCognome());
+		if (a.getDataNascita() != null)
+			aut.setDataNascita(a.getDataNascita());
+		if (a.getLuogoNascita() != null)
+			aut.setLuogoNascita(a.getLuogoNascita());
+		if (a.getNazionalita() != null)
+			aut.setNazionalita(a.getNazionalita());
+		this.as.salva(aut);
+		model.addAttribute("autori", this.as.listaAutori());
+		return "autori.html";
+	}
+	
 }
