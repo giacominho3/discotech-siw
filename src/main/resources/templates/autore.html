@@ -25,6 +25,9 @@
 <a href="editAutore.html" th:href="@{'/autori' + '/' + ${autore.id} + '/editAutore'}">
 	<button>Modifica autore</button>
 </a>
+<a th:href="@{'/autori' + '/' + ${autore.id} + '/deleteAutore'}">
+	<button>Elimina autore</button>
+</a>
 <h1 th:text = "${autore.nome} + ' ' + ${autore.cognome}">Nome Cognome</h1>
 <h2 th:text = "'Data di nascita: ' + ${autore.dataNascita}">Data Nascita</h2>
 <h2 th:if = "${autore.dataMorte != null}" th:text = "'Data di morte: ' + ${autore.dataMorte}"></h2>

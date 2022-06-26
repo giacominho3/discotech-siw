@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -35,7 +36,7 @@ public class Autore {
 	@Column(nullable = false)
 	private String nazionalita;
 	
-	@OneToMany(mappedBy = "autore")
+	@OneToMany(cascade = {CascadeType.ALL}, mappedBy = "autore")
 	private List<Brano> brani;
 	
 	public Autore() {

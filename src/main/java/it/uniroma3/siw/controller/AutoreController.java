@@ -90,4 +90,11 @@ public class AutoreController {
 		return "autori.html";
 	}
 	
+	@RequestMapping(value = "/autori/{id}/deleteAutore", method = RequestMethod.GET)
+	public String deleteAutoreForm (@PathVariable("id") Long id, Model model) {
+		this.as.cancella(this.as.cercaId(id));
+		model.addAttribute("autori", this.as.listaAutori());
+		return "autori.html";
+	}
+	
 }
